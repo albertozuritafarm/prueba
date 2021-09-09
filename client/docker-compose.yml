@@ -19,27 +19,8 @@ services:
     volumes:
       - .:/home/node/app
       - node_modules:/home/node/app/node_modules
-  db:
-    image: mysql:5.7
-    restart: always
-    environment:
-      MYSQL_DATABASE: 'db'
-
-      MYSQL_USER: 'root'
-  
-      MYSQL_PASSWORD: ''
-
-      MYSQL_ROOT_PASSWORD: ''
-    ports:
+     expose:
      
-      - '3306:3306'
-    expose:
-     
-      - '3306'
-     
-    volumes:
-      - my-db:/var/lib/mysql
-      - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
+      - '3001'
+ 
 
-volumes:
-  my-db:
